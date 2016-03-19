@@ -13,3 +13,4 @@ curl -s http://windows.php.net/download | tac | tac | grep --max-count=1 -Po 'ph
 
 unzip php.zip -d php > /dev/null
 
+echo Done.
