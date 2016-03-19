@@ -17,6 +17,8 @@ goto DONE
 :STOP
 echo Stopping localenv
 
+taskkill /f /IM php-cgi.exe
+
 PUSHD nginx
 nginx.exe -s stop
 POPD
