@@ -7,10 +7,19 @@ mkdir nginx
 mv nginx-*/* nginx
 rmdir nginx-*
 
+cp config/nginx/nginx.conf nginx/conf/nginx.conf
+
 echo Installing PHP
 url="http://windows.php.net/downloads/releases/"
 curl -s http://windows.php.net/download | tac | tac | grep --max-count=1 -Po 'php[^"]{1,}-x64.zip' | xargs echo "$url$1" | tr -d ' ' | xargs curl > php.zip
 
 unzip php.zip -d php > /dev/null
+
+cp config/php/php.ini php/php.ini
+
+echo Cleaning up
+
+rm php.zip
+rm nginx.zip
 
 echo Done.
