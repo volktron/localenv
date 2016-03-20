@@ -7,7 +7,8 @@ mkdir nginx
 mv nginx-*/* nginx
 rmdir nginx-*
 
-cp config/nginx/nginx.conf nginx/conf/nginx.conf
+echo Setting nginx.conf
+pwd -W | xargs -i echo {} '/www/;' | tr -d ' ' | xargs echo 'c\\root ' | xargs echo '/root localenv.root/' | xargs -i sed {} config/nginx/nginx.conf > nginx/conf/nginx.conf
 
 echo Installing PHP
 url="http://windows.php.net/downloads/releases/"
