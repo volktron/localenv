@@ -17,6 +17,7 @@ curl -s http://windows.php.net/download | tac | tac | grep --max-count=1 -Po 'ph
 unzip php.zip -d php > /dev/null
 
 cp config/php/php.ini php/php.ini
+cp config/php/vcruntime140.dll php/vcruntime140.dll
 
 echo Cleaning up
 
